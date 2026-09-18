@@ -1,0 +1,6 @@
+import { PageHero } from "@/components/page-hero";
+import { AppointmentForm } from "@/components/forms/appointment-form";
+import { getPublicAppointmentTypes } from "@/lib/content-server";
+
+export const metadata = { title: "Appointments" };
+export default async function AppointmentsPage() { const types = await getPublicAppointmentTypes(); return <><PageHero eyebrow="Appointments" title="Make space for a useful conversation." intro="Choose a conversation type and request a time. Every request is reviewed before it is confirmed." /><section className="section"><div className="container contact-grid"><div><p className="eyebrow">What to expect</p><h2>Clear context makes a better first conversation.</h2><p className="lead-small muted">Share what you are working on, what kind of conversation you need and the outcome you would value. The response will confirm the next step.</p><div className="contact-details"><div><strong>East Africa Time</strong><span>Appointments are shown in Africa/Kampala time.</span></div><div><strong>Online or in person</strong><span>Choose the format that best fits the conversation.</span></div><div><strong>Admin-reviewed</strong><span>Your request stays pending until a time is confirmed.</span></div></div></div><AppointmentForm appointmentTypes={types} /></div></section></>; }
