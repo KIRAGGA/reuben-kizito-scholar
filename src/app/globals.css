@@ -49,6 +49,8 @@ h1, h2, h3, p { margin-top: 0; }
 .nav-link::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 5px; height: 2px; background: var(--gold); border-radius: 99px; transform: scaleX(0); transform-origin: center; transition: transform .2s ease; }
 .nav-link:hover, .nav-link.active { color: var(--green-deep); background: color-mix(in srgb, var(--green) 12%, transparent); }
 .nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
+.nav-link.active { background: var(--green-deep); color: var(--paper); font-weight: 700; }
+.nav-link.active:hover { background: var(--green); color: white; }
 .footer-links a:hover, .mobile-nav a:hover { color: var(--green); }
 .nav-tools { display: flex; align-items: center; gap: 10px; }
 .theme-toggle { width: 40px; height: 40px; display: inline-grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: var(--card); color: var(--green-deep); transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease; }
