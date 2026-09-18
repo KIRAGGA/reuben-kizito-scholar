@@ -3,8 +3,14 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+const metadataBase =
+  siteUrl && /^https?:\/\//.test(siteUrl)
+    ? new URL(siteUrl)
+    : new URL("https://reuben-kizito-scholar.vercel.app");
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://reuben-kizito-scholar.vercel.app"),
+  metadataBase,
   title: { default: "Reuben David Kizito | Scholar, researcher and consultant", template: "%s | Reuben David Kizito" },
   description: "The research, teaching and practical work of Reuben David Kizito in entrepreneurship, family business and sustainable enterprise.",
   keywords: ["Reuben David Kizito", "entrepreneurship researcher Uganda", "family business succession", "business consultant Kampala"],
