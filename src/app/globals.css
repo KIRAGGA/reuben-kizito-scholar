@@ -83,7 +83,7 @@ h1, h2, h3, p { margin-top: 0; }
 .eyebrow { color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 16px; }
 .section { padding: 96px 0; }
 .section-tint { background: var(--paper-deep); }
-.section-dark { background: var(--green-deep); color: var(--paper); padding: 82px 0; }
+.section-dark { background: var(--green-deep); color: var(--ink); padding: 82px 0; }
 .section-dark .eyebrow { color: var(--gold-light); }
 .section-heading { max-width: 700px; margin-bottom: 46px; }
 .section-heading h2, .page-hero h1 { font-size: clamp(38px, 5vw, 64px); line-height: 1.02; margin-bottom: 18px; }
