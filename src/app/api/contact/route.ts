@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { isEmailConfigured, isSupabaseConfigured } from "@/lib/env";
 import { createSupabaseServerClient } from "@/lib/supabase/server";
-import { Resemd } from "resend";
+import { Resend } from "resend";
 
 const schema = z.object({ name: z.string().trim().min(2).max(120), email: z.string().email().max(200), subject: z.string().trim().min(2).max(160), message: z.string().trim().min(10).max(5000), website: z.string().optional() });
 
@@ -19,5 +19,5 @@ export async function POST(request: Request) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({ from: process.env.RESEND_FROM_EMAIL ?? "Website <onboarding@resend.dev>", to: process.env.CONTACT_EMAIL!, subject: `Website message: ${parsed.data.subject}`, replyTo: parsed.data.email, text: `${parsed.data.name} (${parsed.data.email})\n\n${parsed.data.message}` });
   }
-  return NextResponse.json(; message: "Thank you. Your message has been sent." });
+  return NextResponse.json({ message: "Thank you. Your message has been sent." });
 }
